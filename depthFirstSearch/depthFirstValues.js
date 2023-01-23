@@ -7,7 +7,6 @@ class Node {
 }
 
 // Find sum of all values in tree
-
 // Depth First alg - Iterative
 const treeSumIterative = (root) => {
     if(root === null) return 0;
@@ -31,6 +30,26 @@ const treeSumRecursive = (root) => {
     if(root === null) return 0;
     
     return root.val + treeSumRecursive(root.left) + treeSumRecursive(root.right)
+}
+
+const findMin = (root) => {
+    if(root === null) return null;
+
+    let min = null;
+    const stack = [ root ];
+    
+    while(stack.length > 0) {
+        const current = stack.pop();
+        
+        if(!min || current.val < min) {
+            min = current.val
+        }
+
+        if(current.left) stack.push(current.left);
+        if(current.right) stack.push(current.right);
+    }
+
+    return min;
 }
 
 // const a = new Node('a');
@@ -66,3 +85,4 @@ f.right = h;
 
 console.log(treeSumIterative(a))
 console.log(treeSumRecursive(a))
+console.log(findMin(a))
