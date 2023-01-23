@@ -1,3 +1,38 @@
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+// Find sum of all values in tree
+
+// Depth First alg - Iterative
+const treeSumIterative = (root) => {
+    if(root === null) return 0;
+
+    let sum = 0;
+    const stack = [ root ];
+
+    while(stack.length > 0) {
+        const current = stack.pop();
+        sum += current.val;
+
+        if(current.left) stack.push(current.left)
+        if(current.right) stack.push(current.right)
+    }
+
+    return sum;
+}
+
+// Depth First - Recursive method
+const treeSumRecursive = (root) => {
+    if(root === null) return 0;
+    
+    return root.val + treeSumRecursive(root.left) + treeSumRecursive(root.right)
+}
+
 // const a = new Node('a');
 // const b = new Node('b');
 // const c = new Node('c');
@@ -28,3 +63,6 @@ b.right = e;
 c.right = f;
 e.left = g;
 f.right = h;
+
+console.log(treeSumIterative(a))
+console.log(treeSumRecursive(a))
