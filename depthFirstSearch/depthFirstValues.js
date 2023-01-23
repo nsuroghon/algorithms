@@ -52,6 +52,15 @@ const findMin = (root) => {
     return min;
 }
 
+const findMinRecursive = (root) => {
+    if(root === null) return null;
+
+    const leftMin = findMinRecursive(root.left)
+    const rightMin = findMinRecursive(root.right)
+
+    return Math.min(root.val, leftMin, rightMin)
+}
+
 // const a = new Node('a');
 // const b = new Node('b');
 // const c = new Node('c');
@@ -86,3 +95,4 @@ f.right = h;
 console.log(treeSumIterative(a))
 console.log(treeSumRecursive(a))
 console.log(findMin(a))
+console.log(findMinRecursive(a))
