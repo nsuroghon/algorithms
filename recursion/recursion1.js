@@ -16,3 +16,52 @@ const reverseString = (s) => {
 
 console.log(reverseString("hello"));
 console.log(reverseString("Hannah"));
+
+// Is a palindrome ?
+const isPalindrome = (str) => {
+    if(str.length === 0 || str.length === 1) {
+        return true;
+    }
+
+    const firstChar = str.charAt(0)
+    const secondChar = str.charAt(str.length -1)
+
+    if(firstChar === secondChar) {
+        // return isPalindrome(str.slice(1, -1))
+        return isPalindrome(str.substring(1, str.length - 1))
+    }
+    else return false;
+}
+
+console.log(isPalindrome("kayak"));
+console.log(isPalindrome(""));
+console.log(isPalindrome("level"));
+console.log(isPalindrome("random"));
+
+
+
+
+// Given a linked list, swap every two adjacent nodes and return its head. 
+// You must solve the problem without modifying the values in the list's nodes 
+// (i.e., only nodes themselves may be changed.)
+
+// const swapPairs = (head) => {
+//     if(head.length === 0 || head.length === 1) return head;
+
+//     // console.log(head.slice(0,2))
+//     head.slice()
+//     const temp = head[0];
+//     head[0] = head[1]
+//     head[1] = temp
+
+//     return head;
+    
+
+// }
+
+// console.log(swapPairs([1,2,3,4]))
+// console.log(swapPairs([]))
+// console.log(swapPairs([1]))
+
+
+
