@@ -71,4 +71,5 @@ const recursiveSummation = (inputValue, result = 0) => {
 console.log(recursiveSummation(5))
 console.log(recursiveSummation(10))
 
+
 // test commit
