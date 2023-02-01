@@ -71,5 +71,17 @@ const recursiveSummation = (inputValue, result = 0) => {
 console.log(recursiveSummation(5))
 console.log(recursiveSummation(10))
 
+// Implement binary search algorithm to find the index of a target value in a sorted array
+const binarySearch = (arr, target, left = 0, right = arr.length - 1) => {
+    if(left > right) return -1;
+    const mid = Math.floor((left + right) / 2);
+    if(arr[mid] === target) {
+        return mid;
+    }
+    if(target < arr[mid]) {
+        return binarySearch(arr, target, left, mid - 1);
+    } 
+    return binarySearch(arr, target, mid + 1, right);
+}
 
-// test commit
+console.log(binarySearch([-1, 0, 1, 2, 3, 4, 7, 9, 10, 20], 10))
