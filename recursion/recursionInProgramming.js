@@ -85,3 +85,39 @@ const binarySearch = (arr, target, left = 0, right = arr.length - 1) => {
 }
 
 console.log(binarySearch([-1, 0, 1, 2, 3, 4, 7, 9, 10, 20], 10))
+
+
+// 0, 1, 1, 2, 3, 5, 8, 13...
+
+const fib = (n) => {
+    if(n === 0 || n === 1) return n;
+
+    let prev = 1;
+    let curr = 1;
+
+    for(let i = 2; i < n; i++) {
+        const next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+    return curr; 
+}
+console.log(fib(0))
+console.log(fib(1))
+console.log(fib(3))
+console.log(fib(7));
+
+
+// fibonacci sequence
+// Fn = Fn-1 + Fn-2 
+// F0 = 0 or F1 = 1  ie. for these 2 examples Fn = n
+const fibonacci = (n) => {
+    if(n === 0 || n === 1) return n;
+
+    return fibonacci(n - 1) + fibonacci(n - 2)
+}
+
+console.log(fibonacci(0))
+console.log(fibonacci(1))
+console.log(fibonacci(5))
+console.log(fibonacci(7))
