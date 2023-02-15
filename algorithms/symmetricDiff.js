@@ -37,7 +37,7 @@ function confArgs(args) {
 
     // set the 2nd to the result array of helper function
 
-    
+
 }
 // Second function
 // Helper to get the symmetric difference of two arrays
@@ -53,29 +53,5 @@ function diff(first, second) {
 
 console.log(diff([1, 2, 3], [5, 2, 1, 4]))
 
-// function sym(...args) {
-
-//     const result = []
-    
-//     const first = args[0]
-//     const first = args[1]
-
-//     for(let i = 0; i < first.length; i++) {
-//         const firstEl = first[i]
-
-//         if(!second.includes(firstEl)) result.push(firstEl)
-//     }
-
-//     for(let i = 0; i < second.length; i++) {
-//         const secondEl = second[i]
-
-//     }
-//         if(!first.includes(secondEl)) result.push(secondEl)
-
-//     return result;   
-// }
-
-
-  
 // console.log(sym([1, 2, 3], [5, 2, 1, 4]));
 // console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]));
