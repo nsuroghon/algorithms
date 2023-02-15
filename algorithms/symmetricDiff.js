@@ -27,17 +27,17 @@
 // Best approach
 // First function 
 // Recursive function that configures the arguments
-function confArgs(args) {
+function sym(...args) {
+    console.log(args)
     // base case, args will have a length of 1
     if(args.length <= 1) return args;
 
-    // call helper function on first 2 arrays in arguments
+    const first = args[0]
+    const second = args[1]
 
-    // remove the first
+    return [...new Set(args.reduce(diff))]
 
     // set the 2nd to the result array of helper function
-
-
 }
 // Second function
 // Helper to get the symmetric difference of two arrays
@@ -46,12 +46,10 @@ function diff(first, second) {
     const newFirst = first.filter( num => !second.includes(num))
     const newSecond = second.filter( num => !first.includes(num))
     const result = [...newFirst, ...newSecond]
-
-    console.log(result)
     return result;
 }
 
 console.log(diff([1, 2, 3], [5, 2, 1, 4]))
 
-// console.log(sym([1, 2, 3], [5, 2, 1, 4]));
-// console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]));
+console.log(sym([1, 2, 3], [5, 2, 1, 4]));
+console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]));
