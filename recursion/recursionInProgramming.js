@@ -121,3 +121,57 @@ console.log(fibonacci(0))
 console.log(fibonacci(1))
 console.log(fibonacci(5))
 console.log(fibonacci(7))
+
+// MERGE SORT:
+
+// Will have a recursive function & a helper function
+
+// helper
+const merge = (left, right) => {
+    console.log(left, right)
+    const result = []
+
+    for(let i = 0; i < left.length; i++) {
+        // compare left (2) and right (8)
+        // if left is smaller
+        // push left into the array first
+        // if left is larger
+        // push right into array first
+        if(left[i] < right[i]) {
+            result.push(left[i]);
+            result.push(right[i]);
+        } else {
+            result.push(right[i]);
+            result.push(left[i]);
+        }
+    }
+
+    return result;
+}
+
+// console.log(merge([2], [8]))
+// console.log(merge([5], [3]))
+
+
+// Recursive function, keep splitting the array in halves until result is arrays with 1 value
+const mergeSort = (arr) => {
+
+    if(arr.length <= 1) return arr;
+
+    const mid = Math.floor(arr.length / 2);
+    console.log(mid);
+
+    const left = arr.slice(0, mid)
+    const right = arr.slice(mid)
+
+    console.log(left)
+    console.log(right)
+
+    return merge(mergeSort(left), mergeSort(right))
+}
+
+// console.log(mergeSort([2,8,5,3]))
+// console.log(mergeSort([1,4,2,8,345]))
+console.log(mergeSort([1,4,2,8,43,2,1,92]))
+// console.log(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]))
+
