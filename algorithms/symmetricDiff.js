@@ -26,27 +26,17 @@
 
 // Best approach
 // First function 
-// Recursive function that configures the arguments
+// Can pass callback fn in reduce method
+// Every time the method adds one value with the next, calls diff fn with the two values
 function sym(...args) {
-    console.log(args)
-    // base case, args will have a length of 1
-    if(args.length <= 1) return args;
-
-    const first = args[0]
-    const second = args[1]
-
-    return [...new Set(args.reduce(diff))]
-
-    // set the 2nd to the result array of helper function
+    return args.reduce(diff)
 }
 // Second function
 // Helper to get the symmetric difference of two arrays
 function diff(first, second) {
-
     const newFirst = first.filter( num => !second.includes(num))
     const newSecond = second.filter( num => !first.includes(num))
-    const result = [...newFirst, ...newSecond]
-    return result;
+    return [...newFirst, ...newSecond]
 }
 
 console.log(diff([1, 2, 3], [5, 2, 1, 4]))
