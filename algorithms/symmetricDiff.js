@@ -22,9 +22,8 @@
 // One array left. args.lenth === 1
 // return args
 
+// Best approach - Primary function & Helper function
 
-
-// Best approach
 // First function 
 // Can pass callback fn in reduce method
 // Every time the method adds one value with the next, calls diff fn with the two values
@@ -33,6 +32,7 @@
 function sym(...args) {
     return [...new Set(args.reduce(diff))]
 }
+
 // Second function
 // Helper to get the symmetric difference of two arrays
 function diff(first, second) {
