@@ -28,8 +28,10 @@
 // First function 
 // Can pass callback fn in reduce method
 // Every time the method adds one value with the next, calls diff fn with the two values
+// set removes duplicates
+
 function sym(...args) {
-    return args.reduce(diff)
+    return [...new Set(args.reduce(diff))]
 }
 // Second function
 // Helper to get the symmetric difference of two arrays
@@ -41,5 +43,6 @@ function diff(first, second) {
 
 console.log(diff([1, 2, 3], [5, 2, 1, 4]))
 
+console.log(sym([1, 2, 3, 3], [5, 2, 1, 4]))
 console.log(sym([1, 2, 3], [5, 2, 1, 4]));
 console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]));
